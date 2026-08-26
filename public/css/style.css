@@ -26,7 +26,7 @@
   }
   
   .container {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
   }
@@ -69,8 +69,8 @@
   .nav-tabs {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: nowrap;
+    gap: 8px;
     margin: 25px 0 35px;
   }
   
@@ -78,9 +78,9 @@
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--text-muted);
-    padding: 8px 14px;
+    padding: 8px 12px;
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     cursor: pointer;
     transition: all 0.2s ease;
     border-radius: 3px;
@@ -97,7 +97,6 @@
   @media (max-width: 768px) {
     .nav-tabs {
       justify-content: flex-start;
-      flex-wrap: nowrap;
       overflow-x: auto;
       padding-bottom: 6px;
       -webkit-overflow-scrolling: touch;
@@ -243,8 +242,20 @@
   /* Selection Grid (Tab 02) */
   .selection-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+  
+  @media (max-width: 900px) {
+    .selection-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 550px) {
+    .selection-grid {
+      grid-template-columns: 1fr;
+    }
   }
   
   .selection-card {
