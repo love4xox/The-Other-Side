@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE OTHER SIDE : 빌런의 서사 아카이브</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="noir-header">
+      <span class="badge">CLASSIFIED DOSSIER ENGINE</span>
+      <h1 class="noir-title">THE OTHER SIDE</h1>
+      <p class="noir-subtitle">영웅의 빛 뒤에 가려진, 빌런의 정당한 이면을 조명하다</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+      <button class="tab-btn active" data-tab="profilerTab">01. PROFILER (서사 분석)</button>
+      <button class="tab-btn" data-tab="archiveTab">02. DOSSIER ARCHIVE (사건철)</button>
+    </nav>
+
+    <!-- Tab 1: Profiler -->
+    <main id="profilerTab" class="tab-content active">
+      <section class="noir-panel">
+        <div class="panel-header">// DOSSIER GENERATION FORM</div>
+        <form id="analyzeForm">
+          <div class="form-group">
+            <label for="villainName">TARGET VILLAIN (빌런 / 안티히어로 이름) *</label>
+            <input type="text" id="villainName" class="noir-input" placeholder="예: 조커(Joker), 세베루스 스네이프, 킬몽거, 타노스" required>
+          </div>
+          <div class="form-group">
+            <label for="workTitle">ORIGIN WORK (등장 작품명)</label>
+            <input type="text" id="workTitle" class="noir-input" placeholder="예: 영화 '다크 나이트', 해리 포터 시리즈, 블랙 팬서">
+          </div>
+          <div class="form-group">
+            <label for="details">OBSERVATION NOTES (설득당했던 명대사나 신념 메모)</label>
+            <textarea id="details" class="noir-textarea" rows="3" placeholder="예: 왜 그가 세상을 불태우려 했는지, 유독 가슴 아팠던 결핍의 순간을 적어주세요."></textarea>
+          </div>
+          <button type="submit" id="submitBtn" class="submit-btn">서사 프로파일링 시작</button>
+        </form>
+      </section>
+
+      <!-- Loading State -->
+      <div id="loadingBox" class="loading-box hidden">
+        <div class="spinner"></div>
+        <p>기밀 서사 데이터베이스를 대조 프로파일링 중입니다...</p>
+      </div>
+
+      <!-- Result Card -->
+      <section id="resultCard" class="result-section hidden">
+        <div class="dossier-card" id="resultContent"></div>
+      </section>
+    </main>
+
+    <!-- Tab 2: Archive -->
+    <main id="archiveTab" class="tab-content">
+      <div id="archiveList"></div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
