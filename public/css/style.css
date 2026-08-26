@@ -65,35 +65,50 @@
     margin-top: 8px;
   }
   
-  /* Tabs (5 Tabs Responsive Scroll) */
+  /* Tabs (5 Tabs Responsive & Scrollbar Hidden) */
   .nav-tabs {
     display: flex;
-    justify-content: flex-start;
-    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
     margin: 25px 0 35px;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 8px;
-    scrollbar-width: thin;
   }
   
   .tab-btn {
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--text-muted);
-    padding: 8px 16px;
+    padding: 8px 14px;
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     cursor: pointer;
     transition: all 0.2s ease;
     border-radius: 3px;
-    flex-shrink: 0;
+    white-space: nowrap;
   }
   
   .tab-btn.active, .tab-btn:hover {
     border-color: var(--accent-crimson);
     color: #fff;
     background-color: rgba(201, 42, 42, 0.1);
+  }
+  
+  /* 모바일 화면(768px 이하) 대응 */
+  @media (max-width: 768px) {
+    .nav-tabs {
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+    }
+    .nav-tabs::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+    .tab-btn {
+      flex-shrink: 0;
+    }
   }
   
   /* Content Sections */
