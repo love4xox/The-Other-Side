@@ -65,26 +65,29 @@
     margin-top: 8px;
   }
   
-  /* Tabs */
+  /* Tabs (5 Tabs Responsive Scroll) */
   .nav-tabs {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    justify-content: flex-start;
+    gap: 12px;
     margin: 25px 0 35px;
     overflow-x: auto;
     white-space: nowrap;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
   }
   
   .tab-btn {
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--text-muted);
-    padding: 8px 18px;
+    padding: 8px 16px;
     font-family: var(--font-mono);
     font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.2s ease;
     border-radius: 3px;
+    flex-shrink: 0;
   }
   
   .tab-btn.active, .tab-btn:hover {
@@ -222,7 +225,150 @@
     text-decoration: underline;
   }
   
-  /* Loading & Empty */
+  /* Selection Grid (Tab 02) */
+  .selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  
+  .selection-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    padding: 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  
+  .selection-card:hover {
+    border-color: var(--accent-crimson);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(201, 42, 42, 0.15);
+  }
+  
+  .card-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent-crimson);
+    margin-bottom: 8px;
+  }
+  
+  .selection-card h3 {
+    color: #fff;
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+  }
+  
+  .work-name {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    font-family: var(--font-mono);
+  }
+  
+  .desc {
+    font-size: 0.85rem;
+    color: #adb5bd;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .quick-btn {
+    background: transparent;
+    border: none;
+    color: var(--accent-crimson);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 0;
+    font-weight: bold;
+  }
+  
+  /* Essay Box (Tab 03) */
+  .essay-box {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-crimson);
+    padding: 35px;
+    border-radius: 4px;
+    line-height: 1.8;
+  }
+  
+  .essay-box h2 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 12px 0 8px;
+  }
+  
+  .essay-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+  }
+  
+  .essay-box h3 {
+    color: var(--accent-crimson);
+    font-size: 1.05rem;
+    margin: 25px 0 10px;
+  }
+  
+  .essay-box p {
+    color: #ced4da;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Moodboard (Tab 04) */
+  .moodboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  
+  .mood-item {
+    background: #0f1114;
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .mood-swatch {
+    height: 110px;
+    border-radius: 3px;
+    margin-bottom: 14px;
+  }
+  
+  .crimson-gradient {
+    background: linear-gradient(135deg, #490000 0%, #c92a2a 100%);
+  }
+  
+  .shadow-gradient {
+    background: linear-gradient(135deg, #050505 0%, #212529 100%);
+  }
+  
+  .silver-gradient {
+    background: linear-gradient(135deg, #343a40 0%, #868e96 100%);
+  }
+  
+  .mood-item h4 {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  
+  .mood-item p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  
+  /* Loading */
   .loading-box {
     display: flex;
     flex-direction: column;

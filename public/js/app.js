@@ -1,4 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
+// 프리셋 클릭 시 자동 입력 함수
+window.quickFill = function(villain, work, note) {
+    document.getElementById('villainName').value = villain;
+    document.getElementById('workTitle').value = work;
+    document.getElementById('details').value = note;
+  
+    const profilerBtn = document.querySelector('[data-tab="profilerTab"]');
+    if (profilerBtn) profilerBtn.click();
+  
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
+  document.addEventListener('DOMContentLoaded', () => {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
     const analyzeForm = document.getElementById('analyzeForm');
@@ -8,10 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultContent = document.getElementById('resultContent');
     const archiveList = document.getElementById('archiveList');
   
-    // 로컬 저장소 아카이브 데이터
     let archives = JSON.parse(localStorage.getItem('the_other_side_archives') || '[]');
   
-    // 탭 네비게이션
+    // 5개 탭 전환
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const targetTab = btn.dataset.tab;
@@ -40,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
   
-      // UI 상태: 로딩 시작
       submitBtn.disabled = true;
       submitBtn.textContent = '프로파일링 진행 중...';
       loadingBox.classList.remove('hidden');
@@ -63,10 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
           throw new Error(data.error || '분석 파일 생성에 실패했습니다.');
         }
   
-        // 결과 렌더링 (간이 마크다운 파싱)
         renderReport(data.reply);
   
-        // 로컬 아카이브 저장
         archives.unshift({
           id: Date.now(),
           villain: villainName,
@@ -86,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     function renderReport(markdownText) {
-      // 마크다운 파싱 변환
       let html = markdownText
         .replace(/^# (.*$)/gim, '<h1>$1</h1>')
         .replace(/^### (.*$)/gim, '<h3>$1</h3>')

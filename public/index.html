@@ -15,10 +15,13 @@
       <p class="noir-subtitle">영웅의 빛 뒤에 가려진, 빌런의 정당한 이면을 조명하다</p>
     </header>
 
-    <!-- Navigation Tabs -->
+    <!-- Navigation Tabs (5개 탭) -->
     <nav class="nav-tabs">
       <button class="tab-btn active" data-tab="profilerTab">01. PROFILER (서사 분석)</button>
-      <button class="tab-btn" data-tab="archiveTab">02. DOSSIER ARCHIVE (사건철)</button>
+      <button class="tab-btn" data-tab="selectionTab">02. TOP 4 DOSSIER (기밀 선집)</button>
+      <button class="tab-btn" data-tab="essayTab">03. ESSAY & THEORY (비평 지면)</button>
+      <button class="tab-btn" data-tab="moodboardTab">04. MOODBOARD (미학 보드)</button>
+      <button class="tab-btn" data-tab="archiveTab">05. ARCHIVE BOOK (사건철)</button>
     </nav>
 
     <!-- Tab 1: Profiler -->
@@ -54,7 +57,82 @@
       </section>
     </main>
 
-    <!-- Tab 2: Archive -->
+    <!-- Tab 2: Top 4 Selection -->
+    <main id="selectionTab" class="tab-content">
+      <div class="selection-grid">
+        <div class="selection-card" onclick="quickFill('조커 (Joker)', '영화 다크 나이트', '사회적 모순과 위선에 대한 조롱')">
+          <div class="card-tag">CASE #0805</div>
+          <h3>조커 (Joker)</h3>
+          <p class="work-name">영화 '다크 나이트'</p>
+          <p class="desc">"혼돈이란 건 공평하지." — 부조리한 질서의 가면을 찢어발긴 절대적 혼돈의 화신.</p>
+          <button class="quick-btn">사건철 불러오기 ➔</button>
+        </div>
+        <div class="selection-card" onclick="quickFill('세베루스 스네이프', '해리 포터 시리즈', '평생을 바친 그림자 같은 순애와 속죄')">
+          <div class="card-tag">CASE #0109</div>
+          <h3>세베루스 스네이프</h3>
+          <p class="work-name">해리 포터 시리즈</p>
+          <p class="desc">"Always." — 가장 차가운 악역의 가면 뒤에 숨겨진 가장 숭고했던 이면의 사랑.</p>
+          <button class="quick-btn">사건철 불러오기 ➔</button>
+        </div>
+        <div class="selection-card" onclick="quickFill('에릭 킬몽거', '영화 블랙 팬서', '억압받은 약자들의 분노와 버림받은 왕자')">
+          <div class="card-tag">CASE #0216</div>
+          <h3>에릭 킬몽거</h3>
+          <p class="work-name">영화 '블랙 팬서'</p>
+          <p class="desc">"나를 바다에 묻어줘." — 침묵하는 유토피아의 방관을 무너뜨리려 했던 역사의 상처.</p>
+          <button class="quick-btn">사건철 불러오기 ➔</button>
+        </div>
+        <div class="selection-card" onclick="quickFill('타노스', '어벤져스: 인피니티 워', '우주의 유한성과 냉혹한 구원론')">
+          <div class="card-tag">CASE #0427</div>
+          <h3>타노스</h3>
+          <p class="work-name">어벤져스: 인피니티 워</p>
+          <p class="desc">"가장 강력한 선택에는 가장 강인한 의지가 필요하지." — 파멸을 통한 비정한 균형주의자.</p>
+          <button class="quick-btn">사건철 불러오기 ➔</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Tab 3: Essay & Theory -->
+    <main id="essayTab" class="tab-content">
+      <article class="essay-box">
+        <span class="badge">EDITORIAL CRITIC</span>
+        <h2>악(惡)의 결핍과 서사의 완성 : 왜 우리는 빌런에 매혹되는가</h2>
+        <div class="essay-meta">작성: THE OTHER SIDE 수석 서사 비평팀</div>
+        
+        <p>영웅은 세계를 '유지'하려 하지만, 빌런은 세계의 '모순'을 폭로합니다. 대중문화가 평면적인 절대악에서 벗어나 입체적인 안티히어로를 조명하기 시작한 것은, 우리가 살아가는 현실의 균열을 빌런의 목소리를 통해 마주하기 때문입니다.</p>
+        
+        <h3>1. 빌런의 기원에는 언제나 '결핍'이 있다</h3>
+        <p>완벽한 악마는 존재하지 않습니다. 모든 매력적인 빌런의 출발점에는 외면당한 상처, 부조리한 시스템에 대한 배신, 지키지 못한 소중한 존재라는 서사적 분기점이 놓여 있습니다. 이 결핍이야말로 관객이 악역에게서 자신의 그림자를 발견하게 만드는 강력한 공감의 매개체입니다.</p>
+
+        <h3>2. 반박할 수 없는 철학적 명분</h3>
+        <p>훌륭한 빌런의 주장은 단순한 광기가 아닌, 기득권 질서의 맹점을 날카롭게 베어냅니다. 영웅이 '어떻게 살 것인가'를 묻는다면, 빌런은 '왜 이 세계는 이따위인가'를 질문합니다. THE OTHER SIDE는 그들이 던진 불편하지만 거부할 수 없는 질문의 이면을 탐구합니다.</p>
+      </article>
+    </main>
+
+    <!-- Tab 4: Moodboard -->
+    <main id="moodboardTab" class="tab-content">
+      <section class="noir-panel">
+        <div class="panel-header">// CINEMATIC NOIR AESTHETICS & ARCHIVE PALETTE</div>
+        <div class="moodboard-grid">
+          <div class="mood-item">
+            <div class="mood-swatch crimson-gradient"></div>
+            <h4>CRIMSON OBSESSION</h4>
+            <p>신념이 광기로 변질되는 순간의 핏빛 네온 톤</p>
+          </div>
+          <div class="mood-item">
+            <div class="mood-swatch shadow-gradient"></div>
+            <h4>SHADOW OF JUSTICE</h4>
+            <p>정의의 빛 뒤편에 드리워진 칠흑 같은 고독과 상처</p>
+          </div>
+          <div class="mood-item">
+            <div class="mood-swatch silver-gradient"></div>
+            <h4>COLD RATIONALITY</h4>
+            <p>감정을 거세하고 파멸적 대의를 택한 서늘한 메탈 그레이</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Tab 5: Archive Book -->
     <main id="archiveTab" class="tab-content">
       <div id="archiveList"></div>
     </main>
