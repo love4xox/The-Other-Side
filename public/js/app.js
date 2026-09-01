@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/^\* (.*$)/gim, '<li style="margin-bottom:6px;">$1</li>')
       // 일반 볼드 (**텍스트**)
       .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
-      // 한글 파라미터가 포함된 URL 링크 처리 (유튜브 링크 클릭 가능하도록 변환)
+      // 한글 파라미터가 포함된 URL 링크 처리
       .replace(/\[(.*?)\]\((https?:\/\/[^\s\)]+)\)/gim, (match, label, url) => {
         return `<a href="${encodeURI(url)}" target="_blank" rel="noopener noreferrer" style="color: #4da3ff; text-decoration: underline;">${label}</a>`;
       })
@@ -126,40 +126,55 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    // 마크다운 변환 로직을 공통으로 처리하는 헬퍼 함수
+    function formatContent(text) {
+      return text
+        .replace(/^# (.*$)/gim, '<h1 style="color:#ff3333; margin-bottom:15px; font-size:1.3rem;">$1</h1>')
+        .replace(/^### (.*$)/gim, '<h3 style="color:#ff4d4d; margin-top:20px; margin-bottom:8px; font-size:1.05rem;">$1</h3>')
+        .replace(/^\* \*\*(.*?)\*\*:(.*$)/gim, '<li style="margin-bottom:6px;"><strong>$1:</strong>$2</li>')
+        .replace(/^\* (.*$)/gim, '<li style="margin-bottom:6px;">$1</li>')
+        .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+        .replace(/\[(.*?)\]\((https?:\/\/[^\s\)]+)\)/gim, (match, label, url) => {
+          return `<a href="${encodeURI(url)}" target="_blank" rel="noopener noreferrer" style="color: #4da3ff; text-decoration: underline;">${label}</a>`;
+        })
+        .replace(/^---$/gim, '<hr style="border: 0; border-top: 1px solid var(--border-color, #333); margin: 20px 0;">')
+        .replace(/\n\n/g, '<p style="margin-bottom:12px;"></p>')
+        .replace(/\n/g, '<br>');
+    }
+
     archiveList.innerHTML = archives.map(item => `
       <div class="dossier-card" style="margin-bottom: 20px;">
         <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
           <span class="badge">[CASE #${item.id.toString().slice(-4)}]</span>
           <span style="color:var(--text-muted); font-size:0.8rem; font-family:var(--font-mono);">${item.date}</span>
         </div>
-        <h2 style="color:#fff; font-size:1.2rem; margin-bottom:5px;">${item.villain} <small style="color:var(--text-muted); font-size:0.85rem;">(${item.work})</small></h2>
-        <div style="margin-top:15px;">${item.content.replace(/\n/g, '<br>')}</div>
+        <h2 style="font-size:1.2rem; margin-bottom:5px;">${item.villain} <small style="color:var(--text-muted); font-size:0.85rem;">(${item.work})</small></h2>
+        <div style="margin-top:15px;">${formatContent(item.content)}</div>
       </div>
     `).join('');
   }
+
+  // 다크 / 라이트 모드 토글 로직
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const savedTheme = localStorage.getItem('tos_theme') || 'dark';
+
+  if (savedTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    if (themeToggleBtn) themeToggleBtn.textContent = '🌙 다크 모드';
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      if (currentTheme === 'light') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('tos_theme', 'dark');
+        themeToggleBtn.textContent = '☀️ 라이트 모드';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('tos_theme', 'light');
+        themeToggleBtn.textContent = '🌙 다크 모드';
+      }
+    });
+  }
 });
-
-// 다크 / 라이트 모드 토글 로직
-const themeToggleBtn = document.getElementById('themeToggleBtn');
-const savedTheme = localStorage.getItem('tos_theme') || 'dark';
-
-// 초기 테마 적용
-if (savedTheme === 'light') {
-  document.documentElement.setAttribute('data-theme', 'light');
-  if (themeToggleBtn) themeToggleBtn.textContent = '🌙 다크 모드';
-}
-
-if (themeToggleBtn) {
-  themeToggleBtn.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    if (currentTheme === 'light') {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('tos_theme', 'dark');
-      themeToggleBtn.textContent = '☀️ 라이트 모드';
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('tos_theme', 'light');
-      themeToggleBtn.textContent = '🌙 다크 모드';
-    }
-  });
-}
