@@ -455,3 +455,48 @@ body {
 .hidden {
   display: none !important;
 }
+
+/* 라이트 모드 테마 (에디토리얼/문서 아카이브 느낌) */
+[data-theme="light"] {
+  background-color: #f4f5f7 !important;
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .container {
+  background-color: #f4f5f7 !important;
+}
+
+[data-theme="light"] .noir-panel,
+[data-theme="light"] .dossier-card,
+[data-theme="light"] .selection-card,
+[data-theme="light"] .essay-box,
+[data-theme="light"] .mood-card {
+  background-color: #ffffff !important;
+  border-color: #d1d5db !important;
+  color: #222222 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .noir-input,
+[data-theme="light"] .noir-textarea {
+  background-color: #f9fafb !important;
+  color: #111827 !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme="light"] .tab-btn {
+  color: #64748b !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .tab-btn.active {
+  color: #b91c1c !important;
+  border-bottom-color: #b91c1c !important;
+  background: rgba(185, 28, 28, 0.05) !important;
+}
+
+[data-theme="light"] #themeToggleBtn {
+  background: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}

@@ -29,5 +29,5 @@ VILLAIN_SYSTEM_PROMPT = """
 {이 인물이 남긴 비극적 메시지와 서사적 가치에 대한 프로파일러의 냉철한 최종 한 줄 요약 및 종합 감정 소견}
 
 ---
-* **관련 수사 증거물(Scene/OST):** [유튜브 현장 기록 영상 바로가기](https://www.youtube.com/results?search_query={캐릭터명}+명장면)
+* **관련 수사 증거물(Scene/OST):** [유튜브 현장 기록 영상 바로가기](https://www.youtube.com/results?search_query={캐릭터명}+OST)
 """

@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE OTHER SIDE : 빌런의 서사 아카이브</title>
   <link rel="stylesheet" href="css/style.css">
+  <!-- 마크다운 파서 라이브러리 추가 -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
-    <header class="noir-header">
+    <!-- Header (토글 버튼 추가됨) -->
+    <header class="noir-header" style="position: relative;">
+      <button id="themeToggleBtn" type="button" style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); border: 1px solid #444; color: #fff; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">
+        ☀️ 라이트 모드
+      </button>
+
       <span class="badge">CLASSIFIED DOSSIER ENGINE</span>
       <h1 class="noir-title">THE OTHER SIDE</h1>
       <p class="noir-subtitle">영웅의 빛 뒤에 가려진, 빌런의 정당한 이면을 조명하다</p>
@@ -57,46 +63,46 @@
       </section>
     </main>
 
-<!-- Tab 2: Top 4 Selection -->
-<main id="dossierTab" class="tab-content">
-  <div class="selection-grid">
-    <!-- 01. 조커 -->
-    <div class="selection-card" onclick="quickFill('조커 (Joker)', '영화 다크 나이트', '사회적 모순과 위선에 대한 조롱, 절대적 혼돈')">
-      <div class="card-tag">CASE #0805</div>
-      <h3>조커 (Joker)</h3>
-      <p class="work-name">영화 '다크 나이트'</p>
-      <p class="desc">"혼돈이란 건 공평하지." — 부조리한 질서의 가면을 찢어발긴 절대적 혼돈의 화신.</p>
-      <button class="quick-btn">사건철 불러오기 ➔</button>
-    </div>
+    <!-- Tab 2: Top 4 Selection -->
+    <main id="dossierTab" class="tab-content">
+      <div class="selection-grid">
+        <!-- 01. 조커 -->
+        <div class="selection-card" onclick="quickFill('조커 (Joker)', '영화 다크 나이트', '사회적 모순과 위선에 대한 조롱, 절대적 혼돈')">
+          <div class="card-tag">CASE #0805</div>
+          <h3>조커 (Joker)</h3>
+          <p class="work-name">영화 '다크 나이트'</p>
+          <p class="desc">"혼돈이란 건 공평하지." — 부조리한 질서의 가면을 찢어발긴 절대적 혼돈의 화신.</p>
+          <button class="quick-btn">사건철 불러오기 ➔</button>
+        </div>
 
-    <!-- 02. 세베루스 스네이프 -->
-    <div class="selection-card" onclick="quickFill('세베루스 스네이프', '해리 포터 시리즈', '평생을 바친 그림자 같은 순애와 이중 스파이의 고독')">
-      <div class="card-tag">CASE #0109</div>
-      <h3>세베루스 스네이프</h3>
-      <p class="work-name">해리 포터 시리즈</p>
-      <p class="desc">"Always." — 가장 차가운 악역의 가면 뒤에 숨겨진 가장 숭고했던 이면의 사랑과 속죄.</p>
-      <button class="quick-btn">사건철 불러오기 ➔</button>
-    </div>
+        <!-- 02. 세베루스 스네이프 -->
+        <div class="selection-card" onclick="quickFill('세베루스 스네이프', '해리 포터 시리즈', '평생을 바친 그림자 같은 순애와 이중 스파이의 고독')">
+          <div class="card-tag">CASE #0109</div>
+          <h3>세베루스 스네이프</h3>
+          <p class="work-name">해리 포터 시리즈</p>
+          <p class="desc">"Always." — 가장 차가운 악역의 가면 뒤에 숨겨진 가장 숭고했던 이면의 사랑과 속죄.</p>
+          <button class="quick-btn">사건철 불러오기 ➔</button>
+        </div>
 
-    <!-- 03. 말레피센트 -->
-    <div class="selection-card" onclick="quickFill('말레피센트 (Maleficent)', '영화 말레피센트', '가장 믿었던 이에게 날개를 빼앗긴 요정의 증오와 모성')">
-      <div class="card-tag">CASE #0530</div>
-      <h3>말레피센트</h3>
-      <p class="work-name">영화 '말레피센트'</p>
-      <p class="desc">"세상에 진정한 사랑의 키스 따윈 없어." — 잔혹한 배신으로 날개를 잃고 어둠의 마녀가 된 수호자.</p>
-      <button class="quick-btn">사건철 불러오기 ➔</button>
-    </div>
+        <!-- 03. 말레피센트 -->
+        <div class="selection-card" onclick="quickFill('말레피센트 (Maleficent)', '영화 말레피센트', '가장 믿었던 이에게 날개를 빼앗긴 요정의 증오와 모성')">
+          <div class="card-tag">CASE #0530</div>
+          <h3>말레피센트</h3>
+          <p class="work-name">영화 '말레피센트'</p>
+          <p class="desc">"세상에 진정한 사랑의 키스 따윈 없어." — 잔혹한 배신으로 날개를 잃고 어둠의 마녀가 된 수호자.</p>
+          <button class="quick-btn">사건철 불러오기 ➔</button>
+        </div>
 
-    <!-- 04. 한니발 렉터 -->
-    <div class="selection-card" onclick="quickFill('한니발 렉터', '영화 양들의 침묵', '우아함 뒤에 숨은 완전한 공감 결여, 냉혹한 지성 범죄')">
-      <div class="card-tag">CASE #0312</div>
-      <h3>한니발 렉터</h3>
-      <p class="work-name">영화 '양들의 침묵'</p>
-      <p class="desc">"양들의 울음소리는 멈추었나?" — 인간의 위선을 비웃으며 심연을 조롱하는 절대적 포식자.</p>
-      <button class="quick-btn">사건철 불러오기 ➔</button>
-    </div>
-  </div>
-</main>
+        <!-- 04. 한니발 렉터 -->
+        <div class="selection-card" onclick="quickFill('한니발 렉터', '영화 양들의 침묵', '우아함 뒤에 숨은 완전한 공감 결여, 냉혹한 지성 범죄')">
+          <div class="card-tag">CASE #0312</div>
+          <h3>한니발 렉터</h3>
+          <p class="work-name">영화 '양들의 침묵'</p>
+          <p class="desc">"양들의 울음소리는 멈추었나?" — 인간의 위선을 비웃으며 심연을 조롱하는 절대적 포식자.</p>
+          <button class="quick-btn">사건철 불러오기 ➔</button>
+        </div>
+      </div>
+    </main>
 
     <!-- Tab 3: Essay & Theory -->
     <main id="essayTab" class="tab-content">
@@ -115,7 +121,7 @@
       </article>
     </main>
 
-    <!-- Tab 4: Moodboard (감싸는 main 태그 및 moodboardTab ID 추가) -->
+    <!-- Tab 4: Moodboard -->
     <main id="moodboardTab" class="tab-content">
       <div class="mood-grid">
         <!-- 1번 카드: CRIMSON MOTIVE -->
