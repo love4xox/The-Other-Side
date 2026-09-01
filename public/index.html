@@ -18,7 +18,7 @@
     <!-- Navigation Tabs (5개 탭) -->
     <nav class="nav-tabs">
       <button class="tab-btn active" data-tab="profilerTab">01. PROFILER (서사 분석)</button>
-      <button class="tab-btn" data-tab="selectionTab">02. TOP 4 DOSSIER (기밀 선집)</button>
+      <button class="tab-btn" data-tab="dossierTab">02. TOP 4 DOSSIER (기밀 선집)</button>
       <button class="tab-btn" data-tab="essayTab">03. ESSAY & THEORY (비평 지면)</button>
       <button class="tab-btn" data-tab="moodboardTab">04. MOODBOARD (미학 보드)</button>
       <button class="tab-btn" data-tab="archiveTab">05. ARCHIVE BOOK (사건철)</button>
@@ -57,8 +57,8 @@
       </section>
     </main>
 
-    <!-- Tab 2: Top 4 Selection -->
-    <main id="selectionTab" class="tab-content">
+    <!-- Tab 2: Top 4 Selection (ID를 dossierTab으로 수정) -->
+    <main id="dossierTab" class="tab-content">
       <div class="selection-grid">
         <div class="selection-card" onclick="quickFill('조커 (Joker)', '영화 다크 나이트', '사회적 모순과 위선에 대한 조롱')">
           <div class="card-tag">CASE #0805</div>
@@ -108,30 +108,35 @@
       </article>
     </main>
 
-    <!-- Tab 4: Moodboard -->
+    <!-- Tab 4: Moodboard (감싸는 main 태그 및 moodboardTab ID 추가) -->
     <main id="moodboardTab" class="tab-content">
-      <section class="noir-panel">
-        <div class="panel-header">// CINEMATIC NOIR AESTHETICS & ARCHIVE PALETTE</div>
-        <div class="moodboard-grid">
-          <div class="mood-item">
-            <div class="mood-swatch crimson-gradient"></div>
-            <h4>CRIMSON OBSESSION</h4>
-            <p>신념이 광기로 변질되는 순간의 핏빛 네온 톤</p>
-          </div>
-          <div class="mood-item">
-            <div class="mood-swatch shadow-gradient"></div>
-            <h4>SHADOW OF JUSTICE</h4>
-            <p>정의의 빛 뒤편에 드리워진 칠흑 같은 고독과 상처</p>
-          </div>
-          <div class="mood-item">
-            <div class="mood-swatch silver-gradient"></div>
-            <h4>COLD RATIONALITY</h4>
-            <p>감정을 거세하고 파멸적 대의를 택한 서늘한 메탈 그레이</p>
-          </div>
+      <div class="mood-grid">
+        <!-- 1번 카드: CRIMSON MOTIVE -->
+        <div class="mood-card">
+          <div class="color-swatch swatch-crimson"></div>
+          <h3 class="swatch-title">CRIMSON MOTIVE</h3>
+          <p class="swatch-subtitle">선혈의 범행 동기</p>
+          <p class="swatch-desc">신념이 광기로 변질된 참극의 흔적, 핏빛 네온 레드</p>
         </div>
-      </section>
+      
+        <!-- 2번 카드: MIDNIGHT INTERROGATION -->
+        <div class="mood-card">
+          <div class="color-swatch swatch-midnight"></div>
+          <h3 class="swatch-title">MIDNIGHT INTERROGATION</h3>
+          <p class="swatch-subtitle">심야 취조실</p>
+          <p class="swatch-desc">진실과 거짓이 교차하는 취조실의 눅눅한 섀도우 블루 블랙</p>
+        </div>
+      
+        <!-- 3번 카드: AGED DOSSIER -->
+        <div class="mood-card">
+          <div class="color-swatch swatch-dossier"></div>
+          <h3 class="swatch-title">AGED DOSSIER</h3>
+          <p class="swatch-subtitle">변색된 수사 기록철</p>
+          <p class="swatch-desc">세월에 바랜 기밀문서와 건조한 사실만을 기록한 세피아 앰버</p>
+        </div>
+      </div>
     </main>
-
+    
     <!-- Tab 5: Archive Book -->
     <main id="archiveTab" class="tab-content">
       <div id="archiveList"></div>
