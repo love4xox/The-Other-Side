@@ -143,4 +143,4 @@ The-Other-Side/
 ---
 
 ## 13. 배포 주소
-* 🌟 **THE OTHER SIDE 배포 링크**: `https://the-other-side.vercel.app/`
+* 🌟 **THE OTHER SIDE 배포 링크**: `https://the-other-side-pehnfogsn-mind-mate1.vercel.app/`
