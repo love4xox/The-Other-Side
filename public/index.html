@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE OTHER SIDE : 빌런의 서사 아카이브</title>
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖤</text></svg>">
+  
   <link rel="stylesheet" href="css/style.css">
-  <!-- 마크다운 파서 라이브러리 추가 -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <!-- Header (토글 버튼 추가됨) -->
     <header class="noir-header" style="position: relative;">
       <button id="themeToggleBtn" type="button" style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); border: 1px solid #444; color: #fff; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.85rem;">
         ☀️ 라이트 모드
@@ -21,7 +22,6 @@
       <p class="noir-subtitle">영웅의 빛 뒤에 가려진, 빌런의 정당한 이면을 조명하다</p>
     </header>
 
-    <!-- Navigation Tabs (5개 탭) -->
     <nav class="nav-tabs">
       <button class="tab-btn active" data-tab="profilerTab">01. PROFILER (서사 분석)</button>
       <button class="tab-btn" data-tab="dossierTab">02. TOP 4 DOSSIER (기밀 선집)</button>
@@ -30,7 +30,6 @@
       <button class="tab-btn" data-tab="archiveTab">05. ARCHIVE BOOK (사건철)</button>
     </nav>
 
-    <!-- Tab 1: Profiler -->
     <main id="profilerTab" class="tab-content active">
       <section class="noir-panel">
         <div class="panel-header">// DOSSIER GENERATION FORM</div>
@@ -51,22 +50,18 @@
         </form>
       </section>
 
-      <!-- Loading State -->
       <div id="loadingBox" class="loading-box hidden">
         <div class="spinner"></div>
         <p>기밀 서사 데이터베이스를 대조 프로파일링 중입니다...</p>
       </div>
 
-      <!-- Result Card -->
       <section id="resultCard" class="result-section hidden">
         <div class="dossier-card" id="resultContent"></div>
       </section>
     </main>
 
-    <!-- Tab 2: Top 4 Selection -->
     <main id="dossierTab" class="tab-content">
       <div class="selection-grid">
-        <!-- 01. 조커 -->
         <div class="selection-card" onclick="quickFill('조커 (Joker)', '영화 다크 나이트', '사회적 모순과 위선에 대한 조롱, 절대적 혼돈')">
           <div class="card-tag">CASE #0805</div>
           <h3>조커 (Joker)</h3>
@@ -75,7 +70,6 @@
           <button class="quick-btn">사건철 불러오기 ➔</button>
         </div>
 
-        <!-- 02. 세베루스 스네이프 -->
         <div class="selection-card" onclick="quickFill('세베루스 스네이프', '해리 포터 시리즈', '평생을 바친 그림자 같은 순애와 이중 스파이의 고독')">
           <div class="card-tag">CASE #0109</div>
           <h3>세베루스 스네이프</h3>
@@ -84,7 +78,6 @@
           <button class="quick-btn">사건철 불러오기 ➔</button>
         </div>
 
-        <!-- 03. 말레피센트 -->
         <div class="selection-card" onclick="quickFill('말레피센트 (Maleficent)', '영화 말레피센트', '가장 믿었던 이에게 날개를 빼앗긴 요정의 증오와 모성')">
           <div class="card-tag">CASE #0530</div>
           <h3>말레피센트</h3>
@@ -93,7 +86,6 @@
           <button class="quick-btn">사건철 불러오기 ➔</button>
         </div>
 
-        <!-- 04. 한니발 렉터 -->
         <div class="selection-card" onclick="quickFill('한니발 렉터', '영화 양들의 침묵', '우아함 뒤에 숨은 완전한 공감 결여, 냉혹한 지성 범죄')">
           <div class="card-tag">CASE #0312</div>
           <h3>한니발 렉터</h3>
@@ -104,7 +96,6 @@
       </div>
     </main>
 
-    <!-- Tab 3: Essay & Theory -->
     <main id="essayTab" class="tab-content">
       <article class="essay-box">
         <span class="badge">EDITORIAL CRITIC</span>
@@ -121,10 +112,8 @@
       </article>
     </main>
 
-    <!-- Tab 4: Moodboard -->
     <main id="moodboardTab" class="tab-content">
       <div class="mood-grid">
-        <!-- 1번 카드: CRIMSON MOTIVE -->
         <div class="mood-card">
           <div class="color-swatch swatch-crimson"></div>
           <h3 class="swatch-title">CRIMSON MOTIVE</h3>
@@ -132,7 +121,6 @@
           <p class="swatch-desc">신념이 광기로 변질된 참극의 흔적, 핏빛 네온 레드</p>
         </div>
       
-        <!-- 2번 카드: MIDNIGHT INTERROGATION -->
         <div class="mood-card">
           <div class="color-swatch swatch-midnight"></div>
           <h3 class="swatch-title">MIDNIGHT INTERROGATION</h3>
@@ -140,7 +128,6 @@
           <p class="swatch-desc">진실과 거짓이 교차하는 취조실의 눅눅한 섀도우 블루 블랙</p>
         </div>
       
-        <!-- 3번 카드: AGED DOSSIER -->
         <div class="mood-card">
           <div class="color-swatch swatch-dossier"></div>
           <h3 class="swatch-title">AGED DOSSIER</h3>
@@ -150,7 +137,6 @@
       </div>
     </main>
     
-    <!-- Tab 5: Archive Book -->
     <main id="archiveTab" class="tab-content">
       <div id="archiveList"></div>
     </main>
