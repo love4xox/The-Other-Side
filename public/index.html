@@ -30,16 +30,16 @@
         <div class="panel-header">// DOSSIER GENERATION FORM</div>
         <form id="analyzeForm">
           <div class="form-group">
-            <label for="villainName">TARGET VILLAIN (빌런 / 안티히어로 이름) *</label>
-            <input type="text" id="villainName" class="noir-input" placeholder="예: 조커(Joker), 세베루스 스네이프, 킬몽거, 타노스" required>
+            <label for="villainName">TARGET VILLAIN (수사 대상 인물명) *</label>
+            <input type="text" id="villainName" class="noir-input" placeholder="예: 조커(Joker), 세베루스 스네이프, 말레피센트, 한니발 렉터" required>
           </div>
           <div class="form-group">
-            <label for="workTitle">ORIGIN WORK (등장 작품명)</label>
-            <input type="text" id="workTitle" class="noir-input" placeholder="예: 영화 '다크 나이트', 해리 포터 시리즈, 블랙 팬서">
+            <label for="workTitle">ORIGIN WORK (사건 배경 작품명)</label>
+            <input type="text" id="workTitle" class="noir-input" placeholder="예: 다크 나이트, 해리 포터 시리즈, 말레피센트, 양들의 침묵">
           </div>
           <div class="form-group">
-            <label for="details">OBSERVATION NOTES (설득당했던 명대사나 신념 메모)</label>
-            <textarea id="details" class="noir-textarea" rows="3" placeholder="예: 왜 그가 세상을 불태우려 했는지, 유독 가슴 아팠던 결핍의 순간을 적어주세요."></textarea>
+            <label for="details">OBSERVATION NOTES (단서 / 결정적 대사 및 결핍의 메모)</label>
+            <textarea id="details" class="noir-textarea" rows="3" placeholder="예: 날개를 빼앗긴 상처와 배신감, 세상을 향해 내뱉은 마지막 경고나 신념을 기록하십시오."></textarea>
           </div>
           <button type="submit" id="submitBtn" class="submit-btn">서사 프로파일링 시작</button>
         </form>
@@ -57,39 +57,46 @@
       </section>
     </main>
 
-    <!-- Tab 2: Top 4 Selection (ID를 dossierTab으로 수정) -->
-    <main id="dossierTab" class="tab-content">
-      <div class="selection-grid">
-        <div class="selection-card" onclick="quickFill('조커 (Joker)', '영화 다크 나이트', '사회적 모순과 위선에 대한 조롱')">
-          <div class="card-tag">CASE #0805</div>
-          <h3>조커 (Joker)</h3>
-          <p class="work-name">영화 '다크 나이트'</p>
-          <p class="desc">"혼돈이란 건 공평하지." — 부조리한 질서의 가면을 찢어발긴 절대적 혼돈의 화신.</p>
-          <button class="quick-btn">사건철 불러오기 ➔</button>
-        </div>
-        <div class="selection-card" onclick="quickFill('세베루스 스네이프', '해리 포터 시리즈', '평생을 바친 그림자 같은 순애와 속죄')">
-          <div class="card-tag">CASE #0109</div>
-          <h3>세베루스 스네이프</h3>
-          <p class="work-name">해리 포터 시리즈</p>
-          <p class="desc">"Always." — 가장 차가운 악역의 가면 뒤에 숨겨진 가장 숭고했던 이면의 사랑.</p>
-          <button class="quick-btn">사건철 불러오기 ➔</button>
-        </div>
-        <div class="selection-card" onclick="quickFill('에릭 킬몽거', '영화 블랙 팬서', '억압받은 약자들의 분노와 버림받은 왕자')">
-          <div class="card-tag">CASE #0216</div>
-          <h3>에릭 킬몽거</h3>
-          <p class="work-name">영화 '블랙 팬서'</p>
-          <p class="desc">"나를 바다에 묻어줘." — 침묵하는 유토피아의 방관을 무너뜨리려 했던 역사의 상처.</p>
-          <button class="quick-btn">사건철 불러오기 ➔</button>
-        </div>
-        <div class="selection-card" onclick="quickFill('타노스', '어벤져스: 인피니티 워', '우주의 유한성과 냉혹한 구원론')">
-          <div class="card-tag">CASE #0427</div>
-          <h3>타노스</h3>
-          <p class="work-name">어벤져스: 인피니티 워</p>
-          <p class="desc">"가장 강력한 선택에는 가장 강인한 의지가 필요하지." — 파멸을 통한 비정한 균형주의자.</p>
-          <button class="quick-btn">사건철 불러오기 ➔</button>
-        </div>
-      </div>
-    </main>
+<!-- Tab 2: Top 4 Selection -->
+<main id="dossierTab" class="tab-content">
+  <div class="selection-grid">
+    <!-- 01. 조커 -->
+    <div class="selection-card" onclick="quickFill('조커 (Joker)', '영화 다크 나이트', '사회적 모순과 위선에 대한 조롱, 절대적 혼돈')">
+      <div class="card-tag">CASE #0805</div>
+      <h3>조커 (Joker)</h3>
+      <p class="work-name">영화 '다크 나이트'</p>
+      <p class="desc">"혼돈이란 건 공평하지." — 부조리한 질서의 가면을 찢어발긴 절대적 혼돈의 화신.</p>
+      <button class="quick-btn">사건철 불러오기 ➔</button>
+    </div>
+
+    <!-- 02. 세베루스 스네이프 -->
+    <div class="selection-card" onclick="quickFill('세베루스 스네이프', '해리 포터 시리즈', '평생을 바친 그림자 같은 순애와 이중 스파이의 고독')">
+      <div class="card-tag">CASE #0109</div>
+      <h3>세베루스 스네이프</h3>
+      <p class="work-name">해리 포터 시리즈</p>
+      <p class="desc">"Always." — 가장 차가운 악역의 가면 뒤에 숨겨진 가장 숭고했던 이면의 사랑과 속죄.</p>
+      <button class="quick-btn">사건철 불러오기 ➔</button>
+    </div>
+
+    <!-- 03. 말레피센트 -->
+    <div class="selection-card" onclick="quickFill('말레피센트 (Maleficent)', '영화 말레피센트', '가장 믿었던 이에게 날개를 빼앗긴 요정의 증오와 모성')">
+      <div class="card-tag">CASE #0530</div>
+      <h3>말레피센트</h3>
+      <p class="work-name">영화 '말레피센트'</p>
+      <p class="desc">"세상에 진정한 사랑의 키스 따윈 없어." — 잔혹한 배신으로 날개를 잃고 어둠의 마녀가 된 수호자.</p>
+      <button class="quick-btn">사건철 불러오기 ➔</button>
+    </div>
+
+    <!-- 04. 한니발 렉터 -->
+    <div class="selection-card" onclick="quickFill('한니발 렉터', '영화 양들의 침묵', '우아함 뒤에 숨은 완전한 공감 결여, 냉혹한 지성 범죄')">
+      <div class="card-tag">CASE #0312</div>
+      <h3>한니발 렉터</h3>
+      <p class="work-name">영화 '양들의 침묵'</p>
+      <p class="desc">"양들의 울음소리는 멈추었나?" — 인간의 위선을 비웃으며 심연을 조롱하는 절대적 포식자.</p>
+      <button class="quick-btn">사건철 불러오기 ➔</button>
+    </div>
+  </div>
+</main>
 
     <!-- Tab 3: Essay & Theory -->
     <main id="essayTab" class="tab-content">
